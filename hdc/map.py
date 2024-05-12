@@ -9,25 +9,32 @@ class CleanUpMemory:
     def add_hdv(self, X):
         self.memory.add(X)
 
-    def add_pair(x):
-        create_hdv(self.dimensionality)
-        self.add_hdv(X)
-        self.dictionary[X] = x
+    def add_pair(self, x):
+        X = create_hdv(self.dimensionality)
+        self.add_hdv(convert_array2tuple(X))
+        self.dictionary[x] = X
 
-    def cosine_simularity(self, X, n):
+    def cosine_simularity(self, X):
         simularity = dict()
         for hdv in self.memory:
             dot_product = np.dot(X, hdv)
             magnitude = np.linalg.norm(vector)
             cosine_similarity = dot_product / (magnitude * magnitude)
             simularity[X] = cosine_similarity
-        
-        return simularity[:n]
+        res = {key: val for key, val in sorted(simularity.items(), key = lambda ele: ele[0], reverse = True)}
+        return sorted
     
-    def lookup_pair(self, X):
-        x = self.dictionary[X]
-        return x
+    def lookup_pair(self, x):
+        X = self.dictionary[x]
+        return X
 
+def convert_array2tuple(X):
+    tuple_arr = tuple(X)
+    return tuple_arr
+
+def convert_tuple2array(X):
+    array = np.asarray(X)
+    return array
 
 def create_hdv(d):
     hdv = np.random.choice([-1, 1], size=d)
