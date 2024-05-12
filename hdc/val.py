@@ -18,3 +18,6 @@ def unbundle(A, B):
 
 def similarity(A, B):
     pass
+
+def cosine_inner_product(A, B):
+    pass
