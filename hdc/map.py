@@ -14,7 +14,7 @@ class CleanUpMemory:
         self.add_hdv(convert_array2tuple(X))
         self.dictionary[x] = X
 
-    def cosine_simularity(self, X):
+    def search_memory(self, X):
         simularity = dict()
         for hdv in self.memory:
             dot_product = np.dot(X, hdv)
